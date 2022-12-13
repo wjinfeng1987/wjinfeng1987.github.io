@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../assets/css/user/user_info.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">modify user info</div>
+        <div class="layui-card-body">
+            <form class="layui-form" lay-filter="formUserInfo">
+                <!-- hidden element assignment -->
+                <input type="hidden" name="'id" value='' />
+                <div class="layui-form-item">
+                    <label class="layui-form-label">username</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="username" required placeholder="enter username" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">nickname</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="nickname" required lay-verify="required|nickname" placeholder="enter nickname" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">email</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="email" required lay-verify="required|email" placeholder="enter email" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">submit</button>
+                            <button type="reset" class="layui-btn layui-btn-primary" id="'btnReset">reset</button>
+                        </div>
+                    </div>
+            </form>
+            </div>
+        </div>
+        <script src="../assets/lib/layui/layui.all.js"></script>
+        <script src="../assets/lib/jquery.js"></script>
+        <script src="../assets/js/baseAPI.js"></script>
+        <script src="../assets/js/user/user_info.js"></script>
+</body>
+
+</html>
