@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>regular expression</title>
+  </head>
+  <header>Regular Expression</header>
+  <body>
+    <ul>
+      <h4>General Part</h4>
+      <li>start with /^ end with $/</li>
+      <li>() === optional</li>
+      <li>\/ === '/'</li>
+      <li>| === or</li>
+      <li>[]=== include <br />eg. [0-9a-z_]</li>
+      <li>[^] ===Negate / not include</li>
+      <li>
+        {}=== the number include <br />
+        eg.\d{3} 3 digitals
+      </li>
+      <li>/i === ignore case</li>
+      <li>/g === looping 循环匹配直到匹配不到</li>
+      <h4>Digital Part</h4>
+      <li>\d ===[0-9]</li>
+      <li>\d{2} === 2 digitals</li>
+      <li>\d{2,4}=== 2-4 digitals</li>
+      <li>\d{2,} === more than 2 digitals</li>
+      <li>\d+ === \d{1,} at least one digital;最少1</li>
+      <li>\d* === \d{0,};可有可无</li>
+      <li>\d? === \d{0,1} the most is one digital;最多1</li>
+      <li>\D ===[^0-9] not a digital</li>
+      <h4>String Part</h4>
+      <li>\s === [ \f\n\r\t\v] space or enter 空白和换行</li>
+      <li>\S === [^ \f\n\r\t\v]not a space 非空白</li>
+      <li>\w === [A-Za-z0-9_]</li>
+      <li>\W === [^A-Za-z0-9_]</li>
+      <li>. === [^\n\r] 匹配除换行符\n、\r之外的任何单个字符</li>
+      <li>\n === new line 换行</li>
+      <li>\r === enter 回车</li>
+      <h4>Example Part</h4>
+      <li>/^[\u4e00-\u9fa5]$/ 中文only</li>
+      <li>
+        .*? === non greedy match <br />
+        eg.path.match(/id=(.*?)(&|$))会一直找直到找到条件2中的&或者$
+      </li>
+      <li>str.replace(/<[^>]+>/g, '') === ignore html tag <..></li>
+      <li>/<\/?([a-z]+).*?>/ig ===html tag included end tag</li>
+      <h4>Function Part</h4>
+      <li>
+        .replace() return string <br />
+        eg. str.replace(/<\/?([a-z]+).*?>/ig, (result,group1)=>{<br />
+        if(group1==='img'){<br />
+        return result } <br />
+        return '' })
+      </li>
+      <li>.test() return boolean</li>
+      <li>.match() return arr[result, (1)result,(2)result...(n)result]</li>
+      <li>.toLocaleString() digital add thousandths</li>
+    </ul>
+  </body>
+</html>
